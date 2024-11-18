@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Meeting Scheduling System</h1>
+
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="client-tab" data-bs-toggle="tab" data-bs-target="#client" type="button" role="tab" aria-controls="client" aria-selected="true">Schedule with Client</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="team-tab" data-bs-toggle="tab" data-bs-target="#team" type="button" role="tab" aria-controls="team" aria-selected="false">Schedule with Team</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="meetings-tab" data-bs-toggle="tab" data-bs-target="#meetings" type="button" role="tab" aria-controls="meetings" aria-selected="false">View Scheduled Meetings</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="myTabContent">
+            
+            <!-- Schedule with Client Tab -->
+            <div class="tab-pane fade show active" id="client" role="tabpanel" aria-labelledby="client-tab">
+                <h3>Schedule a Meeting with Client</h3>
+                <form id="clientForm">
+                    <div class="mb-3">
+                        <label for="clientName" class="form-label">Client Name</label>
+                        <input type="text" class="form-control" id="clientName" placeholder="Enter client's full name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="clientEmail" class="form-label">Client Email</label>
+                        <input type="email" class="form-control" id="clientEmail" placeholder="Enter client's email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="clientPhone" class="form-label">Client Phone</label>
+                        <input type="text" class="form-control" id="clientPhone" placeholder="Enter client's phone number" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="meetingDate" class="form-label">Meeting Date & Time</label>
+                        <input type="datetime-local" class="form-control" id="meetingDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="meetingPlatform" class="form-label">Meeting Platform</label>
+                        <select class="form-select" id="meetingPlatform" required>
+                            <option value="Zoom">Zoom</option>
+                            <option value="Google Meet">Google Meet</option>
+                            <option value="Microsoft Teams">Microsoft Teams</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Schedule Meeting</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Schedule with Team Tab -->
+            <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
+                <h3>Schedule a Meeting with Team</h3>
+                <form id="teamForm">
+                    <div class="mb-3">
+                        <label for="teamMembers" class="form-label">Select Team Members</label>
+                        <select multiple class="form-select" id="teamMembers" required>
+                            <option>John Doe</option>
+                            <option>Jane Smith</option>
+                            <option>Michael Brown</option>
+                            <option>Sarah Johnson</option>
+                            <option>Robert Wilson</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teamMeetingDate" class="form-label">Meeting Date & Time</label>
+                        <input type="datetime-local" class="form-control" id="teamMeetingDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="meetingAgenda" class="form-label">Meeting Agenda</label>
+                        <textarea class="form-control" id="meetingAgenda" rows="3" placeholder="Enter agenda for the meeting" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Schedule Meeting</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- View Scheduled Meetings Tab -->
+            <div class="tab-pane fade" id="meetings" role="tabpanel" aria-labelledby="meetings-tab">
+                <h3>Scheduled Meetings</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Meeting Type</th>
+                            <th>Date & Time</th>
+                            <th>Participants</th>
+                            <th>Platform</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Client Meeting</td>
+                            <td>2023-09-20 14:00</td>
+                            <td>John Doe</td>
+                            <td>Zoom</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm">Cancel</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Team Meeting</td>
+                            <td>2023-09-21 10:00</td>
+                            <td>Jane Smith, Michael Brown</td>
+                            <td>Google Meet</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm">Cancel</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
